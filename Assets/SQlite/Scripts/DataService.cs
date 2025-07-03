@@ -71,5 +71,13 @@ public class DataService  {
 
 	}
 
-
+	public User CreatUser(string inputValue)
+	{
+		var user = new User
+		{
+			Name = inputValue,
+		};
+		_connection.Insert(user);
+		return user;
+	}
 }
