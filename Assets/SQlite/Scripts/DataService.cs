@@ -69,6 +69,17 @@ public class DataService  {
 		_connection.DropTable<User>();
 		_connection.CreateTable<User> ();
 
+		_connection.DropTable<Prize>();
+		_connection.CreateTable<Prize> ();
+
+		_connection.InsertAll(new[]
+		{
+			new Prize
+			{
+				name = "",
+				rarity = ""
+			}
+		});
 	}
 
 	public User CreatUser(string inputValue)

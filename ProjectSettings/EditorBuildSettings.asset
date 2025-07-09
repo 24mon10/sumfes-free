@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/TitleScene.unity
     guid: b3f0c4b1f102fdb41b49134d186455d0
   - enabled: 1
-    path: Assets/MainManu.unity
+    path: Assets/MainMenu.unity
     guid: d3db88478a32db748a68b76b1fc3f2f3
   - enabled: 1
     path: Assets/GachaScene.unity

@@ -6,12 +6,19 @@ public class PlayerDrawController : MonoBehaviour
 {
 	[SerializeField] GameObject MainMenuPlayer;
 
+	float waitTime = 0f;
+
 	private string NowScene;
 	private void Update()
 	{
-		if (SceneChangeManager.currentSceneName == "MainManu")
+		if (SceneChangeManager.currentSceneName == "MainMenu")
 		{
-			MainMenuPlayer.SetActive(true);
+			waitTime += Time.deltaTime;
+			if(waitTime >= 1.0f)
+			{
+				MainMenuPlayer.SetActive(true);
+			}
+			
 		}
 		else
 		{

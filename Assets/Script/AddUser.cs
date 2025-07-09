@@ -16,6 +16,9 @@ public class AddUser : MonoBehaviour
 	[SerializeField]
 	TextMeshProUGUI userInfo;
 
+	[SerializeField]
+	string nextScene;
+
 	string inputValue;
 	private void Start()
 	{
@@ -26,6 +29,6 @@ public class AddUser : MonoBehaviour
 		var ds = new DataService("DataBase.db");
 		ds.CreatUser(m_InputField.text);
 		userInfo.text = m_InputField.text;
-		panel.SetActive(false);
+		SceneChangeManager.ChangeScene(nextScene);
 	}
 }
