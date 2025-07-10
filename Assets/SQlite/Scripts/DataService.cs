@@ -74,12 +74,9 @@ public class DataService  {
 
 		_connection.InsertAll(new[]
 		{
-			new Prize
-			{
-				name = "",
-				rarity = ""
-			}
+			new Prize{}
 		});
+
 	}
 
 	public User CreatUser(string inputValue)
