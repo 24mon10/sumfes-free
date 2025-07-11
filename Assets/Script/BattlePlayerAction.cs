@@ -26,7 +26,7 @@ public class BattlePlayerAction : MonoBehaviour
 	[Header("—‰º‚Ì‰‘¬"), SerializeField]
 	private float _initFallSpeed = 2;
 
-	
+	private PlayerInput playerInput;
 
 	private Vector2 _inputMove;
 	private float _verticalVelocity;
@@ -35,12 +35,52 @@ public class BattlePlayerAction : MonoBehaviour
 
 	Animator animator;
 
+	public void OnEnable()
+	{
+		playerInput.actions["Move"].performed += OnMove;
+		playerInput.actions["Move"].canceled += OnMoveCancel;
+
+		
+		playerInput.actions["Attack"].performed += OnAttack;
+		playerInput.actions["Attack"].canceled += OnAttackCansel;
+		
+	}
+
+	private void OnDisable()
+	{
+		playerInput.actions["Move"].performed -= OnMove;
+		playerInput.actions["Move"].canceled -= OnMoveCancel;
+
+		playerInput.actions["Attack"].performed -= OnAttack;
+		playerInput.actions["Attack"].canceled -= OnAttackCansel;
+		
+	}
+
+
 	public void OnMove(InputAction.CallbackContext context)
 	{
 		// “ü—Í’l‚ğ•Û‚µ‚Ä‚¨‚­
 		_inputMove = context.ReadValue<Vector2>();
 		animator.SetBool("Move", true);
 	}
+	private void OnMoveCancel(InputAction.CallbackContext context)
+	{
+		// “ü—Í’l‚ğ•Û‚µ‚Ä‚¨‚­
+		_inputMove = context.ReadValue<Vector2>();
+		animator.SetBool("Move", false);
+	}
+
+	public void OnAttack(InputAction.CallbackContext context)
+	{
+
+		animator.SetTrigger("Attack");
+	}
+
+	private void OnAttackCansel(InputAction.CallbackContext context)
+	{
+		animator.SetTrigger("Idle");
+	}
+
 	// Start is called before the first frame update
 	void Start()
     {
@@ -51,7 +91,7 @@ public class BattlePlayerAction : MonoBehaviour
 		_transform = transform;
 		characterController = GetComponent<CharacterController>();
 		animator = GetComponent<Animator>();
-		
+		playerInput =GetComponent<PlayerInput>();
 	}
 
 

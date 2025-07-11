@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerDrawController : MonoBehaviour
 {
 	[SerializeField] GameObject MainMenuPlayer;
+	[SerializeField] GameObject BattlePlayer;
 
 	float waitTime = 0f;
 
@@ -23,6 +24,15 @@ public class PlayerDrawController : MonoBehaviour
 		else
 		{
 			MainMenuPlayer.SetActive(false);
+		}
+
+		if(SceneChangeManager.currentSceneName == "BattleScene")
+		{
+			BattlePlayer.SetActive(true);
+		}
+		else
+		{
+			BattlePlayer.SetActive(false);
 		}
 	}
 }
