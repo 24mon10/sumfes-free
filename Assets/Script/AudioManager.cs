@@ -19,7 +19,7 @@ public class AudioManager : MonoBehaviour
 	public void Play(Bgm bgm)
 	{
 		audioSources[(int)currentBgm].Stop();
-		audioSources[(int)currentBgm].Play();
+		audioSources[(int)bgm].Play();
 		currentBgm = bgm;
 	}
 

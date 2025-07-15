@@ -35,6 +35,7 @@ public class BattlePlayerAction : MonoBehaviour
 
 	Animator animator;
 
+
 	public void OnEnable()
 	{
 		playerInput.actions["Move"].performed += OnMove;

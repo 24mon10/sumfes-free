@@ -9,6 +9,6 @@ public class User
 	
 	public override string ToString()
 	{
-		return string.Format("[Person: Id={0}, Name={1}]", Id, Name);
+		return string.Format("[User: Id={0}, Name={1}]", Id, Name);
 	}
 }

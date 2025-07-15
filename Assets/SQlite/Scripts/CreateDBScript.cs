@@ -13,5 +13,7 @@ public class CreateDBScript : MonoBehaviour {
     {
         var ds = new DataService("DataBase.db");
         ds.CreateDB();
+		ds.CreatePlayerDB();
+		ds.CreateEnemiesDB();
     }
 }

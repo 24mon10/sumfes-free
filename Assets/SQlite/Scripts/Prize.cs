@@ -12,6 +12,6 @@ public class Prize
 
 	public override string ToString()
 	{
-		return string.Format("[Person: Id={0}, Name={1}, Rarity={3}, emissionRate={4}]", id, name, rarity, emissionRate);
+		return string.Format("[Prize: Id={0}, Name={1}, Rarity={3}, emissionRate={4}]", id, name, rarity, emissionRate);
 	}
 }

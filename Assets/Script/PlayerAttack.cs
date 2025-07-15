@@ -5,7 +5,13 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
 	[SerializeField] Collider m_collider;
-    public void AttackStart()
+
+	private void Start()
+	{
+		m_collider.enabled = false;
+	}
+
+	public void AttackStart()
 	{
 		m_collider.enabled = true;
 	}

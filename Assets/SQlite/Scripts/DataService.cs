@@ -68,15 +68,98 @@ public class DataService  {
 		
 		_connection.DropTable<User>();
 		_connection.CreateTable<User> ();
+	}
 
+	public void CreatePrizeDB()
+	{
 		_connection.DropTable<Prize>();
 		_connection.CreateTable<Prize> ();
+	}
 
-		_connection.InsertAll(new[]
-		{
-			new Prize{}
+	public void CreatePlayerDB()
+	{
+		_connection.DropTable<Player>();
+		_connection.CreateTable<Player> ();
+
+		_connection.InsertAll(new[]{
+			new Player
+			{
+				level = 1,
+				n_exp = 20,
+				hp = 20,
+				mp = 5,
+				strength = 10,
+				guard = 4,
+			},
+			new Player
+			{
+				level = 2,
+				n_exp = 35,
+				hp = 35,
+				mp = 10,
+				strength = 14,
+				guard = 9,
+			},
+			new Player
+			{
+				level = 3,
+				n_exp = 50,
+				hp = 50,
+				mp = 15,
+				strength = 20,
+				guard = 14,
+			},
 		});
+	}
 
+	public void CreateEnemiesDB()
+	{
+		_connection.DropTable<Enemies>();
+		_connection.CreateTable<Enemies>();
+
+		_connection.InsertAll(new[] {
+			new Enemies
+			{
+				id = 1,
+				name = "スライム",
+				hp = 10,
+				mp = 0,
+				strength = 4,
+				guard = 2,
+				expg = 4,
+			},
+			new Enemies
+			{
+				id = 2,
+				name = "とげこうらスライム",
+				hp = 7,
+				mp = 5,
+				strength = 8,
+				guard = 15,
+				expg = 7,
+			},
+			new Enemies
+			{
+				id = 3,
+				name = "怪物サボテン",
+				hp = 15,
+				mp = 0,
+				strength = 13,
+				guard = 4,
+				expg = 10,
+			},
+			new Enemies
+			{
+				id = 4,
+				name = "マッシュ",
+				hp = 12,
+				mp = 10,
+				strength = 3,
+				guard = 6,
+				expg = 10,
+			}
+
+		});
 	}
 
 	public User CreatUser(string inputValue)
@@ -88,4 +171,10 @@ public class DataService  {
 		_connection.Insert(user);
 		return user;
 	}
+
+	public Enemies GetEnemiesData(int en)
+	{
+		return _connection.Table<Enemies>().Where(ed => ed.id == en).ElementAt(0);
+	}
+
 }
