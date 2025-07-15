@@ -498,6 +498,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1832444677}
+  - component: {fileID: 1832444678}
   m_Layer: 0
   m_Name: PlayerStatus
   m_TagString: Untagged
@@ -520,6 +521,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1832444678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832444676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea0097bd56a2b642816f5abb9093bd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 0
+  n_exp: 0
+  hp: 0
+  mp: 0
+  strength: 0
+  guard: 0
 --- !u!1 &1982547673 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8832082113530610892, guid: 75efbb068476813499b51567ddbb5066, type: 3}

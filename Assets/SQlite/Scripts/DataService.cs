@@ -1,5 +1,7 @@
 ﻿using SQLite4Unity3d;
 using UnityEngine;
+using System.Linq;
+
 #if !UNITY_EDITOR
 using System.Collections;
 using System.IO;
@@ -171,6 +173,18 @@ public class DataService  {
 		_connection.Insert(user);
 		return user;
 	}
+
+	//プレイヤーデータの全ての要素を指す
+	public List<Player> GetAllPlayerData()
+	{
+		return _connection.Table<Player>().ToList();
+	}
+
+	public Player GetPlayer(int lv)
+	{
+		return _connection.Table<Player>().Where(pd => pd.level == lv).ElementAt(0);
+	}
+
 
 	public Enemies GetEnemiesData(int en)
 	{
