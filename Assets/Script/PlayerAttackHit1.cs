@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAttackHit : MonoBehaviour
+public class PlayerAttackHit1 : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -15,4 +15,12 @@ public class PlayerAttackHit : MonoBehaviour
     {
         
     }
+
+	private void OnTriggerEnter(Collider other)
+	{
+		if(other.TryGetComponent<EnemyController>(out var enemy))
+		{
+			enemy.HitAttack();
+		}
+	}
 }

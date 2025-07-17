@@ -8,12 +8,12 @@ public class PlayerStateInfo : MonoBehaviour
 	[SerializeField] int n_exp;
 	[SerializeField] int hp;
 	[SerializeField] int mp;
-	[SerializeField] int strength;
+	[SerializeField] public int strength;
 	[SerializeField] int guard;
 
 	DataService ds = new DataService("DataBase.db");
 
-	public Player player;
+	private Player player;
 
 	// Start is called before the first frame update
 	void Start()
@@ -32,4 +32,14 @@ public class PlayerStateInfo : MonoBehaviour
     {
         
     }
+
+	public void DrawNextStatus(int nlv)
+	{
+		player = ds.GetPlayer(nlv);
+		level = player.level;
+		hp = player.hp;
+		mp = player.mp;
+		strength = player.strength;
+		guard = player.guard;
+	}
 }

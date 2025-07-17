@@ -42,9 +42,11 @@ GameObject:
   m_Component:
   - component: {fileID: 3062390848944208042}
   - component: {fileID: 1238130584817311617}
-  - component: {fileID: 2980487674308395158}
   - component: {fileID: 8689393292173548717}
+  - component: {fileID: 2980487674308395158}
   - component: {fileID: 7112416977629568254}
+  - component: {fileID: 7533043176574996489}
+  - component: {fileID: 7325837106010340954}
   m_Layer: 0
   m_Name: SlimePBR
   m_TagString: Untagged
@@ -91,6 +93,28 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8689393292173548717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3759356678450510835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f1214822fac343488f9557c6f40fd3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  playerStatus: {fileID: 0}
+  myPosition: 0
+  dbNumber: 1
+  id: 0
+  m_name: 
+  hp: 0
+  strength: 0
+  guard: 0
+  expg: 0
 --- !u!195 &2980487674308395158
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -113,21 +137,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &8689393292173548717
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3759356678450510835}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f1214822fac343488f9557c6f40fd3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  myPosition: 0
-  Hp: 10
 --- !u!114 &7112416977629568254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,6 +150,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_collider: {fileID: 6906667156553092388}
+--- !u!135 &7533043176574996489
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3759356678450510835}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0.45, z: 0}
+--- !u!54 &7325837106010340954
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3759356678450510835}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &3922187069511966363
 GameObject:
   m_ObjectHideFlags: 0

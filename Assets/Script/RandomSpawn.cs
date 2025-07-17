@@ -21,7 +21,6 @@ public class RandomSpawn : MonoBehaviour
 	void Update()
 	{
 		elapsedTime += Time.deltaTime;
-		Debug.Log(elapsedTime);
 		if(elapsedTime >= timeOut)
 		{
 			RandomLottery();
@@ -34,8 +33,7 @@ public class RandomSpawn : MonoBehaviour
 		DataService ds = new DataService("DataBase.db");
 
 		int randomValue = Random.Range(0, 101);
-		Debug.Log(randomValue);
-		if (randomValue < 41)
+		if (randomValue < 51)
 		{
 			Instantiate(randomEnemy[0], enemySpawnPos.transform.position, enemySpawnPos.transform.rotation);
 

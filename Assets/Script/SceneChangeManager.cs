@@ -11,13 +11,13 @@ public class SceneChangeManager
 
 	static public void AddPlayerScene()
 	{
-		Debug.Log("AddPlayerScene");
+		//Debug.Log("AddPlayerScene");
 		SceneManager.LoadScene(PlayerSceneName, LoadSceneMode.Additive);
 	}
 
 	static public void SubPlayerScene()
 	{
-		Debug.Log("SubPlayerScene");
+		//Debug.Log("SubPlayerScene");
 		SceneManager.UnloadSceneAsync(PlayerSceneName);
 	}
 
@@ -25,13 +25,13 @@ public class SceneChangeManager
 	{
 		if (currentSceneName.Length > 0)
 		{
-			Debug.Log("UnloadSceneAsync:" + currentSceneName);
+			//Debug.Log("UnloadSceneAsync:" + currentSceneName);
 			SceneManager.UnloadSceneAsync(currentSceneName);
 		}
 
 
 		SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
 		currentSceneName = sceneName;
-		Debug.Log("LoadScene(Additive):" + currentSceneName);
+		//Debug.Log("LoadScene(Additive):" + currentSceneName);
 	}
 }

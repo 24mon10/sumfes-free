@@ -12,27 +12,52 @@ public class EnemyController : MonoBehaviour
 	//[SerializeField] Slider slider;
 	//[SerializeField] AudioClip[] m_clips;
 	//[SerializeField] GameObject effect;
+	
 	[SerializeField] GameObject target;
+	[SerializeField] GameObject playerStatus;
 	[SerializeField] float myPosition;
+    [SerializeField] int dbNumber;
+	private float waitTime;
 	private NavMeshAgent agent;
-
-	[SerializeField] int Hp;
 	private bool Down = false;
-
+	private Enemies enemies;
 	Animator animator;
+
+	private PlayerStateInfo playerStateInfo;
+
+	DataService ds = new DataService("DataBase.db");
+	[SerializeField] int id;
+	[SerializeField] string m_name;
+	[SerializeField] int hp;
+	[SerializeField] int strength;
+	[SerializeField] int guard;
+	[SerializeField] int expg;
+
 
 	// Start is called before the first frame update
 	void Start()
     {
 		target = GameObject.FindGameObjectWithTag("Player");
+		playerStatus = GameObject.FindGameObjectWithTag("PlayerStatus");
+		playerStateInfo = playerStatus.GetComponent<PlayerStateInfo>();
 		agent = GetComponent<NavMeshAgent>();
 		animator = GetComponent<Animator>();
-		
+		enemies = ds.GetEnemiesData(dbNumber);
+		m_name = enemies.name;
+		hp = enemies.hp;
+		strength = enemies.strength;
+		guard = enemies.guard;
+		expg = enemies.expg;
 	}
 
     // Update is called once per frame
     void FixedUpdate()
     {
+		if(hp <= 0)
+		{
+			animator.SetTrigger("Die");
+		}
+
 		/* ターゲットのポジションを取得 */
 		Vector3 targetPos = target.transform.position;
 
@@ -47,11 +72,32 @@ public class EnemyController : MonoBehaviour
 
 		if(myPosition <= agent.stoppingDistance)
 		{
-			animator.SetTrigger("Attack");
+			waitTime += Time.deltaTime;
+			if (waitTime >= 5)
+			{
+				animator.SetTrigger("Attack");
+				waitTime = 0;
+			}
 		}
 		else
+		{
+			animator.SetTrigger("Move");
+		}
+
+		if(agent.speed == 0)
 		{
 			animator.SetTrigger("Idle");
 		}
     }
+
+	public void HitAttack()
+	{
+		hp -= (playerStateInfo.strength - guard);
+		Debug.Log(hp);
+	}
+
+	public void Die() 
+	{
+		Destroy(gameObject);
+	}
 }

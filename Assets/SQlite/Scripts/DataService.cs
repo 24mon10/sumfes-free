@@ -124,9 +124,8 @@ public class DataService  {
 			{
 				id = 1,
 				name = "スライム",
-				hp = 10,
-				mp = 0,
-				strength = 4,
+				hp = 20,
+				strength = 10,
 				guard = 2,
 				expg = 4,
 			},
@@ -134,9 +133,8 @@ public class DataService  {
 			{
 				id = 2,
 				name = "とげこうらスライム",
-				hp = 7,
-				mp = 5,
-				strength = 8,
+				hp = 17,
+				strength = 12,
 				guard = 15,
 				expg = 7,
 			},
@@ -144,9 +142,8 @@ public class DataService  {
 			{
 				id = 3,
 				name = "怪物サボテン",
-				hp = 15,
-				mp = 0,
-				strength = 13,
+				hp = 30,
+				strength = 20,
 				guard = 4,
 				expg = 10,
 			},
@@ -154,8 +151,7 @@ public class DataService  {
 			{
 				id = 4,
 				name = "マッシュ",
-				hp = 12,
-				mp = 10,
+				hp = 24,
 				strength = 3,
 				guard = 6,
 				expg = 10,
@@ -179,7 +175,7 @@ public class DataService  {
 	{
 		return _connection.Table<Player>().ToList();
 	}
-
+	//プレイヤーデータの一部の要素を指す
 	public Player GetPlayer(int lv)
 	{
 		return _connection.Table<Player>().Where(pd => pd.level == lv).ElementAt(0);
