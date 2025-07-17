@@ -171,10 +171,10 @@ public class BattlePlayerAction : MonoBehaviour
 		}
 
 
-		//if(playerStateInfo.hp <= 0)
-		//{
-			
-		//}
+		if (playerStateInfo.hp <= 0)
+		{
+			animator.SetTrigger("Die");
+		}
 	}
 
 	public void DamageHit(int hd)
@@ -188,9 +188,9 @@ public class BattlePlayerAction : MonoBehaviour
 		}
 	}
 
-	private void Die()
+	public void Die()
 	{
-		Destroy(gameObject);
+		gameObject.SetActive(false);
 	}
 
 
