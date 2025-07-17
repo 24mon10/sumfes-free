@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PlayerStateInfo : MonoBehaviour
 {
-	[SerializeField] int level;
-	[SerializeField] int n_exp;
-	[SerializeField] int hp;
-	[SerializeField] int mp;
+	[SerializeField] public int level;
+	[SerializeField] public int n_exp;
+	[SerializeField] public int hp;
+	[SerializeField] public int mp;
 	[SerializeField] public int strength;
-	[SerializeField] int guard;
+	[SerializeField] public int guard;
 
 	DataService ds = new DataService("DataBase.db");
 
@@ -37,6 +37,7 @@ public class PlayerStateInfo : MonoBehaviour
 	{
 		player = ds.GetPlayer(nlv);
 		level = player.level;
+		n_exp = player.n_exp;
 		hp = player.hp;
 		mp = player.mp;
 		strength = player.strength;

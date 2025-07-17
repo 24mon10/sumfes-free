@@ -135,7 +135,7 @@ public class DataService  {
 				name = "とげこうらスライム",
 				hp = 17,
 				strength = 12,
-				guard = 15,
+				guard = 10,
 				expg = 7,
 			},
 			new Enemies

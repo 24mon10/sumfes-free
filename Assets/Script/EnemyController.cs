@@ -14,22 +14,23 @@ public class EnemyController : MonoBehaviour
 	//[SerializeField] GameObject effect;
 	
 	[SerializeField] GameObject target;
-	[SerializeField] GameObject playerStatus;
 	[SerializeField] float myPosition;
     [SerializeField] int dbNumber;
 	private float waitTime;
 	private NavMeshAgent agent;
+	private int damage = 0;
 	private bool Down = false;
 	private Enemies enemies;
 	Animator animator;
 
+	[SerializeField] GameObject playerStatus;
 	private PlayerStateInfo playerStateInfo;
 
 	DataService ds = new DataService("DataBase.db");
 	[SerializeField] int id;
 	[SerializeField] string m_name;
 	[SerializeField] int hp;
-	[SerializeField] int strength;
+	[SerializeField] public int strength;
 	[SerializeField] int guard;
 	[SerializeField] int expg;
 
@@ -73,6 +74,7 @@ public class EnemyController : MonoBehaviour
 		if(myPosition <= agent.stoppingDistance)
 		{
 			waitTime += Time.deltaTime;
+			Debug.Log(waitTime);
 			if (waitTime >= 5)
 			{
 				animator.SetTrigger("Attack");
@@ -92,8 +94,13 @@ public class EnemyController : MonoBehaviour
 
 	public void HitAttack()
 	{
-		hp -= (playerStateInfo.strength - guard);
-		Debug.Log(hp);
+		damage = playerStateInfo.strength - guard;
+		if (damage < 0) return;
+		else
+		{
+			hp -= damage;
+		}
+
 	}
 
 	public void Die() 

@@ -202,7 +202,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1539111424083670031}
-  - component: {fileID: 65736376284325690}
+  - component: {fileID: 4969258865942239837}
+  - component: {fileID: 2487587539932030722}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -225,7 +226,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 906951282662474807}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &65736376284325690
+--- !u!114 &4969258865942239837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3973900162529275635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 220e6d882d53cac43a8f2b31e7801307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!135 &2487587539932030722
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -244,8 +257,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.35
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.4
+  m_Center: {x: 0.04, y: 0, z: 0}
 --- !u!1 &4038983807886605118
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,7 +340,7 @@ GameObject:
   - component: {fileID: -1548914412519884704}
   m_Layer: 0
   m_Name: CactusPA
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -383,9 +396,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  playerStatus: {fileID: 0}
   myPosition: 0
   dbNumber: 3
+  playerStatus: {fileID: 0}
   id: 0
   m_name: 
   hp: 0
@@ -426,7 +439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e18c4eff49a572b48b574b465c427842, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_collider: {fileID: 65736376284325690}
+  m_collider: {fileID: 2487587539932030722}
 --- !u!136 &4615018734530953512
 CapsuleCollider:
   m_ObjectHideFlags: 0

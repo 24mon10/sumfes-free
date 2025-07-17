@@ -18,6 +18,7 @@ public class AudioManager : MonoBehaviour
 
 	public void Play(Bgm bgm)
 	{
+		//AudioRequestスクリプトから来たリクエストに応じたbgmを再生
 		audioSources[(int)currentBgm].Stop();
 		audioSources[(int)bgm].Play();
 		currentBgm = bgm;

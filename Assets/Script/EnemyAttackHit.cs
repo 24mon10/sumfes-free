@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using UnityEngine;
 
-public class PlayerAttackHit1 : MonoBehaviour
+public class EnemyAttackHit : MonoBehaviour
 {
+	EnemyController controller;
+	
     // Start is called before the first frame update
     void Start()
     {
-        
+		controller = GetComponentInParent<EnemyController>();
     }
 
     // Update is called once per frame
@@ -18,9 +21,9 @@ public class PlayerAttackHit1 : MonoBehaviour
 
 	private void OnTriggerEnter(Collider other)
 	{
-		if(other.TryGetComponent<EnemyController>(out var enemy))
+		if(other.TryGetComponent<BattlePlayerAction>(out var bp))
 		{
-			enemy.HitAttack();
+			bp.DamageHit(controller.strength);
 		}
 	}
 }

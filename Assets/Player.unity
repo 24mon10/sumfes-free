@@ -146,7 +146,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 625536233}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5002ab48605821b479f45d988ad0d68a, type: 3}
   m_Name: 
@@ -471,6 +471,14 @@ PrefabInstance:
       value: "\u30AB\u30C3\u30D1\u30FC\u30BD\u30FC\u30C9"
       objectReference: {fileID: 0}
     - target: {fileID: 7946489765571015997, guid: 839ce472723342748a10108d26497cb1, type: 3}
+      propertyPath: m_Size.y
+      value: 1.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 7946489765571015997, guid: 839ce472723342748a10108d26497cb1, type: 3}
+      propertyPath: m_Center.y
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 7946489765571015997, guid: 839ce472723342748a10108d26497cb1, type: 3}
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
@@ -582,6 +590,7 @@ MonoBehaviour:
   _gravity: 15
   _fallSpeed: 10
   _initFallSpeed: 2
+  playerStatus: {fileID: 1832444676}
 --- !u!143 &1982547678
 CharacterController:
   m_ObjectHideFlags: 0

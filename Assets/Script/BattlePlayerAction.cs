@@ -26,7 +26,12 @@ public class BattlePlayerAction : MonoBehaviour
 	[Header("óéâ∫ÇÃèâë¨"), SerializeField]
 	private float _initFallSpeed = 2;
 
+	[SerializeField] GameObject playerStatus;
+	private PlayerStateInfo playerStateInfo;
+
 	private PlayerInput playerInput;
+
+	private int hitDamage = 0;
 
 	private Vector2 _inputMove;
 	private float _verticalVelocity;
@@ -89,6 +94,7 @@ public class BattlePlayerAction : MonoBehaviour
     }
 	private void Awake()
 	{
+		playerStateInfo = playerStatus.GetComponent<PlayerStateInfo>();
 		_transform = transform;
 		characterController = GetComponent<CharacterController>();
 		animator = GetComponent<Animator>();
@@ -163,7 +169,30 @@ public class BattlePlayerAction : MonoBehaviour
 		{
 			animator.SetBool("Move", false);
 		}
+
+
+		//if(playerStateInfo.hp <= 0)
+		//{
+			
+		//}
 	}
+
+	public void DamageHit(int hd)
+	{
+		hitDamage = hd - playerStateInfo.guard;
+		if (hitDamage <= 0) return;
+		else
+		{
+			playerStateInfo.hp -= hitDamage;
+			Debug.Log(playerStateInfo.hp);
+		}
+	}
+
+	private void Die()
+	{
+		Destroy(gameObject);
+	}
+
 
 	// Update is called once per frame
 	void Update()
