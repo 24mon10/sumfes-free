@@ -6,11 +6,6 @@ public class EnemyAttack : MonoBehaviour
 {
 	[SerializeField] Collider m_collider;
 
-	private void Start()
-	{
-		m_collider.enabled = false;
-	}
-
 	public void OnAttack()
 	{ 
 		m_collider.enabled = true;

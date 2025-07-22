@@ -33,14 +33,14 @@ public class RandomSpawn : MonoBehaviour
 		DataService ds = new DataService("DataBase.db");
 
 		int randomValue = Random.Range(0, 101);
-		if (randomValue < 0)
+		if (randomValue < 51)
 		{
 			Instantiate(randomEnemy[0], enemySpawnPos.transform.position, enemySpawnPos.transform.rotation);
 
 		}
-		else if (randomValue < 100)
+		else if (randomValue < 71)
 		{
-			Instantiate(randomEnemy[1], enemySpawnPos.transform.position, enemySpawnPos.transform.rotation, enemySpawnPos.transform);
+			Instantiate(randomEnemy[1], enemySpawnPos.transform.position, enemySpawnPos.transform.rotation);
 
 		}
 		else if(randomValue < 91)

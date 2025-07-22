@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerActionEvent : MonoBehaviour
+public class PlayerAttack : MonoBehaviour
 {
 	[SerializeField] Collider m_collider;
 
@@ -20,10 +20,4 @@ public class PlayerActionEvent : MonoBehaviour
 	{
 		m_collider.enabled = false;
 	}
-
-	public void Die()
-	{
-		SceneChangeManager.ChangeScene("MainMenu");
-	}
-
 }
