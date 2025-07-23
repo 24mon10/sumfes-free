@@ -76,6 +76,207 @@ public class DataService  {
 	{
 		_connection.DropTable<Prize>();
 		_connection.CreateTable<Prize> ();
+
+		_connection.InsertAll(new[]{
+			new Prize()
+			{
+				id = 1,
+				name = "カッパーソード",
+				rarity = "N",
+			},
+			new Prize()
+			{
+				id = 2,
+				name = "シャドウスパイン",
+				rarity = "N",
+			},
+			new Prize()
+			{
+				id = 3,
+				name = "モスストーンソード",
+				rarity = "N",
+			},
+			new Prize()
+			{
+				id = 4,
+				name = "アーススプリッター",
+				rarity = "N",
+			},
+			new Prize()
+			{
+				id = 5,
+				name = "ムーンスライサー",
+				rarity = "N",
+			},
+			new Prize()
+			{
+				id = 6,
+				name = "タイタンズソード",
+				rarity = "N",
+			},
+			new Prize()
+			{
+				id = 7,
+				name = "ストーンブレイカー",
+				rarity = "N",
+			},
+			new Prize()
+			{
+				id = 8,
+				name = "ウォーンアックス",
+				rarity = "N",
+			},
+			new Prize()
+			{
+				id = 9,
+				name = "スパイクメイス",
+				rarity = "N",
+			},
+			new Prize()
+			{
+				id = 10,
+				name = "リーパーズブレード",
+				rarity = "N",
+			},
+			new Prize()
+			{
+				id = 11,
+				name = "ハンターズボウ",
+				rarity = "N",
+			},
+			new Prize()
+			{
+				id = 12,
+				name = "クリスタルスタッフ",
+				rarity = "N",
+			},
+			new Prize()
+			{
+				id = 13,
+				name = "シードオブライフ",
+				rarity = "N",
+			},
+			new Prize()
+			{
+				id = 14,
+				name = "アイアンウッドシールド",
+				rarity = "N",
+			},
+			new Prize()
+			{
+				id = 15,
+				name = "ヴァイオレッドエッジ",
+				rarity = "R",
+			},
+			new Prize()
+			{
+				id = 16,
+				name = "エルダーグロースソード",
+				rarity = "R",
+			},
+			new Prize()
+			{
+				id = 17,
+				name = "ボルトエッジ",
+				rarity = "R",
+			},
+			new Prize()
+			{
+				id = 18,
+				name = "アビスブレード",
+				rarity = "R",
+			},
+			new Prize()
+			{
+				id = 19,
+				name = "グランドハンマー",
+				rarity = "R",
+			},
+			new Prize()
+			{
+				id = 20,
+				name = "ラースクラブ",
+				rarity = "R",
+			},
+			new Prize()
+			{
+				id = 21,
+				name = "ダークランサー",
+				rarity = "R",
+			},
+			new Prize()
+			{
+				id = 22,
+				name = "ネクロティックランス",
+				rarity = "R",
+			},
+			new Prize()
+			{
+				id = 23,
+				name = "エルヴンボウ",
+				rarity = "R",
+			},
+			new Prize()
+			{
+				id = 24,
+				name = "ヘルブレイズ・セプター",
+				rarity = "R",
+			},
+			new Prize()
+			{
+				id = 25,
+				name = "エルダーワンド",
+				rarity = "R",
+			},
+			new Prize()
+			{
+				id = 26,
+				name = "ルーンシールド",
+				rarity = "R",
+			},
+			new Prize()
+			{
+				id = 27,
+				name = "サンブレード",
+				rarity = "SR",
+			},
+			new Prize()
+			{
+				id = 28,
+				name = "ボルカニックソード",
+				rarity = "SR",
+			},
+			new Prize()
+			{
+				id = 29,
+				name = "デモンズエッジ",
+				rarity = "SR",
+			},
+			new Prize()
+			{
+				id = 30,
+				name = "ルーンブレイド",
+				rarity = "SR",
+			},
+			new Prize()
+			{
+				id = 31,
+				name = "フレイムストライカー",
+				rarity = "SR",
+			},
+			new Prize()
+			{
+				id = 32,
+				name = "グラヴィススパイン",
+				rarity = "SR",
+			},
+			new Prize()
+			{
+				id = 33,
+				name = "インフェルノアックス",
+				rarity = "SR",				
+			},
+		});
 	}
 
 	public void CreatePlayerDB()
@@ -187,4 +388,8 @@ public class DataService  {
 		return _connection.Table<Enemies>().Where(ed => ed.id == en).ElementAt(0);
 	}
 
+	//public Prize GetPrizeColumn(float pn)
+	//{
+	//	return _connection.Table<Prize>().Where(pd => pd.id == pn).ElementAt(0);
+	//}
 }
