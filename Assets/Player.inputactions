@@ -27,7 +27,7 @@
                     "name": "Fire",
                     "type": "Button",
                     "id": "2264fa19-88d1-4220-a69d-f6edf574fa23",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
