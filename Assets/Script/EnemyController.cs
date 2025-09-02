@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
-using UnityEngine.UIElements;
 using static UnityEditor.PlayerSettings;
 
 public class EnemyController : MonoBehaviour
@@ -74,7 +73,7 @@ public class EnemyController : MonoBehaviour
 		if(myPosition <= agent.stoppingDistance)
 		{
 			waitTime += Time.deltaTime;
-			Debug.Log(waitTime);
+			
 			if (waitTime >= 5)
 			{
 				animator.SetTrigger("Attack");

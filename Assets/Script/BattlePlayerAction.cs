@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.InputSystem;
-using UnityEngine.UIElements;
 using static UnityEngine.EventSystems.StandaloneInputModule;
 
 public class BattlePlayerAction : MonoBehaviour
 {
 	[SerializeField] GameObject player;
+	[SerializeField] Slider playerSlider;
+
 	private Transform _transform; 
 	private CharacterController characterController;
 
@@ -37,6 +39,7 @@ public class BattlePlayerAction : MonoBehaviour
 	private float _verticalVelocity;
 	private float _turnVelocity;
 	private bool _isGroundedPrev;
+	private PlayerStateInfo playerHp;
 
 	Animator animator;
 
@@ -95,6 +98,7 @@ public class BattlePlayerAction : MonoBehaviour
 	private void Awake()
 	{
 		playerStateInfo = playerStatus.GetComponent<PlayerStateInfo>();
+		playerHp = playerStatus.GetComponent<PlayerStateInfo>();
 		_transform = transform;
 		characterController = GetComponent<CharacterController>();
 		animator = GetComponent<Animator>();
@@ -105,6 +109,8 @@ public class BattlePlayerAction : MonoBehaviour
 
 	private void FixedUpdate()
 	{
+		playerSlider.maxValue = playerStateInfo.f_hp;
+		playerSlider.value = playerStateInfo.hp;
 		var isGrounded = characterController.isGrounded;
 
 		if (isGrounded && !_isGroundedPrev)
@@ -173,6 +179,7 @@ public class BattlePlayerAction : MonoBehaviour
 
 		if (playerStateInfo.hp <= 0)
 		{
+			characterController.enabled = false;
 			animator.SetTrigger("Die");
 		}
 	}
@@ -180,6 +187,7 @@ public class BattlePlayerAction : MonoBehaviour
 	public void DamageHit(int hd)
 	{
 		hitDamage = hd - playerStateInfo.guard;
+		
 		if (hitDamage <= 0) return;
 		else
 		{

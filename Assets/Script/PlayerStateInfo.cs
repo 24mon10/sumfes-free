@@ -13,6 +13,7 @@ public class PlayerStateInfo : MonoBehaviour
 
 	DataService ds = new DataService("DataBase.db");
 
+	public int f_hp;
 	private Player player;
 
 	// Start is called before the first frame update
@@ -25,6 +26,8 @@ public class PlayerStateInfo : MonoBehaviour
 		mp = player.mp;
 		strength = player.strength;
 		guard = player.guard;
+
+		f_hp = player.hp;
 	}
 
     // Update is called once per frame
@@ -42,5 +45,7 @@ public class PlayerStateInfo : MonoBehaviour
 		mp = player.mp;
 		strength = player.strength;
 		guard = player.guard;
+
+		f_hp = player.hp;
 	}
 }
