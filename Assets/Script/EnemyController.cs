@@ -32,6 +32,7 @@ public class EnemyController : MonoBehaviour
 	[SerializeField] public int strength;
 	[SerializeField] int guard;
 	[SerializeField] int expg;
+	[SerializeField] Slider slider;
 
 
 	// Start is called before the first frame update
@@ -48,11 +49,13 @@ public class EnemyController : MonoBehaviour
 		strength = enemies.strength;
 		guard = enemies.guard;
 		expg = enemies.expg;
+		
 	}
 
     // Update is called once per frame
     void FixedUpdate()
     {
+		slider.value = hp;
 		if(hp <= 0)
 		{
 			animator.SetTrigger("Die");

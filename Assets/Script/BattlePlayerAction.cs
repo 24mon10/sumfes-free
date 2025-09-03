@@ -103,6 +103,7 @@ public class BattlePlayerAction : MonoBehaviour
 		characterController = GetComponent<CharacterController>();
 		animator = GetComponent<Animator>();
 		playerInput =GetComponent<PlayerInput>();
+		
 	}
 
 
@@ -179,10 +180,14 @@ public class BattlePlayerAction : MonoBehaviour
 
 		if (playerStateInfo.hp <= 0)
 		{
-			characterController.enabled = false;
-			animator.SetTrigger("Die");
+			animator.SetBool("Death",true);
 		}
 	}
+
+	//public void Death()
+	//{
+	//	gameObject.SetActive(false);
+	//}
 
 	public void DamageHit(int hd)
 	{
@@ -196,12 +201,7 @@ public class BattlePlayerAction : MonoBehaviour
 		}
 	}
 
-	public void Die()
-	{
-		gameObject.SetActive(false);
-	}
-
-
+	
 	// Update is called once per frame
 	void Update()
     {

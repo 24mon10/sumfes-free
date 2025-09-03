@@ -408,6 +408,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_collider: {fileID: 1812767530}
+--- !u!114 &1135968317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1135968312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e61a28c6be7832a41903263db167071c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  battlePlayer: {fileID: 1982547673}
 --- !u!1001 &1154713730
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -510,6 +523,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5319999897439077926, guid: 75efbb068476813499b51567ddbb5066, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1135968315}
+    - targetCorrespondingSourceObject: {fileID: 5319999897439077926, guid: 75efbb068476813499b51567ddbb5066, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1135968317}
   m_SourcePrefab: {fileID: 100100000, guid: 75efbb068476813499b51567ddbb5066, type: 3}
 --- !u!4 &1154713731 stripped
 Transform:

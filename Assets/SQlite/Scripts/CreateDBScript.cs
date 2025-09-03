@@ -16,5 +16,6 @@ public class CreateDBScript : MonoBehaviour {
 		ds.CreatePlayerDB();
 		ds.CreateEnemiesDB();
 		ds.CreatePrizeDB();
+		ds.CreatBelongingsDB();
     }
 }

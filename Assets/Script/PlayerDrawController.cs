@@ -35,4 +35,5 @@ public class PlayerDrawController : MonoBehaviour
 			BattlePlayer.SetActive(false);
 		}
 	}
+	
 }

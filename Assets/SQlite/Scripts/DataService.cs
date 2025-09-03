@@ -371,6 +371,12 @@ public class DataService  {
 		return user;
 	}
 
+	public void CreatBelongingsDB()
+	{
+		_connection.DropTable<Belongings>();
+		_connection.CreateTable<Belongings>();
+	}
+
 	//プレイヤーデータの全ての要素を指す
 	public List<Player> GetAllPlayerData()
 	{

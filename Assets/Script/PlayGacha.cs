@@ -6,10 +6,8 @@ public class PlayGacha : MonoBehaviour
 {
 	[SerializeField]
 	int count;
-
-
-
-    void Start()
+	DataService ds = new DataService("DataBase.db");
+	void Start()
     {
         
     }
@@ -22,6 +20,6 @@ public class PlayGacha : MonoBehaviour
 
 	void OnClick()
 	{
-
+		
 	}
 }
