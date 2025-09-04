@@ -293,7 +293,7 @@
                     "name": "Submit",
                     "type": "Button",
                     "id": "c6fdfed7-bd5d-4c3b-bb1c-995cbe4fd772",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -302,7 +302,7 @@
                     "name": "Cancel",
                     "type": "Button",
                     "id": "780a7236-df1a-41cb-8f31-28fdf676a341",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
