@@ -14,7 +14,7 @@ public class CanvasDraw : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(SceneChangeManager.currentSceneName == "BattleScene")
+        if(SceneChangeManager.currentSceneName == "BattleScene" || SceneChangeManager.currentSceneName == "TitleScene")
 		{
 			canvas.SetActive(false);
 		}
